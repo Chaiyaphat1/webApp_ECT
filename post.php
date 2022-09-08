@@ -1,3 +1,13 @@
+<?php 
+$id = $_GET["id"];
+$msg = "";
+
+if(( $id % 2 ) == 0 ){
+     $msg = "เป็นกระทู้หมายเลขคู่";
+}else{
+     $msg = "เป็นกระทู้หมายเลขคี่";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +19,10 @@
 <body>
 <h1 style="text-align: center;">Webboard KakKak</h1>
 <div align="center">
-            ต้องการกูกระทู้หมายเลข  <?php echo $_GET["id"];?>
+         
+
+            <p>   ต้องการกูกระทู้หมายเลข  <?php echo $_GET["id"];?></p>
+            <p><?php  echo $msg ?></p>
         </div>
         <hr>
         <table style="border: 2px solid black;  margin-left: auto;margin-right: auto;">

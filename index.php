@@ -16,11 +16,19 @@
     </select>
     <a href="Login.html" style="float: right;">เข้าสู่ระบบ</a>
     <ul>
-        <li><a href="post.php?id=1">กระทู้ที่ 1</a></li>
-        <li><a href="post.php?id=2">กระทู้ที่ 2</a></li>
-        <li><a href="post.php?id=3">กระทู้ที่ 3</a></li>
-        <li><a href="post.php?id=4">กระทู้ที่ 4</a></li>
-        <li><a href="post.php?id=5">กระทู้ที่ 5</a></li>
+<?php 
+$i=1;
+do {
+?>
+ 
+ <li><a href="post.php?id=<?php echo $i?>">กระทู้ที่ <?php echo $i?></a></li>
+
+<?php 
+$i++;
+}while($i <= 10)
+?>
+      
+      
     </ul>
 </body>
 </html>
