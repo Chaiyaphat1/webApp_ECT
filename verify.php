@@ -1,3 +1,11 @@
+<?php
+     session_start();
+     if(isset($_SESSION['id'])){
+        header("location:index.php");
+        die();
+    }
+?>
+
 <?php 
 $user = $_POST["login"];
 $password = $_POST["pwd"];
@@ -13,15 +21,22 @@ $password = $_POST["pwd"];
 </head>
 
 <body>
-    <h1 align="center"> Webverify</h1>
+    <h1 align ="center"> Webverify</h1>
     <hr>
-    <div align="center">
+    <div align ="center">
 
         <?php 
-     if($user == "admin"&& $password =="ad1234"){
+     if($user == "admin"&& $password == "ad1234"){
         echo "ยินดีต้อนรับคุณ ADMIN";
-     }elseif($user == "member"&& $password =="mem1234"){
-        echo "ยินดีต้อนรับคุณ MEMBER"; 
+        $_SESSION['username']='admin';
+        $_SESSION['role']='a';
+        $_SESSION['id']= session_id();
+        
+     }elseif($user == "member"&& $password == "mem1234"){
+        echo "ยินดีต้อนรับคุณ member"; 
+        $_SESSION['username']='member';
+        $_SESSION['role']='m';
+        $_SESSION['id']= session_id();
     }
         else{
             echo "ชื่อบัญชี่หรือรหัสผ่านไม่ถูกต้อง";

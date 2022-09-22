@@ -37,7 +37,7 @@ if(( $id % 2 ) == 0 ){
         </table>
         <br>
         <div align="center">
-            <a href="index1.html">กลับไปหน้าหลัก</a>
+            <a href="index1.php">กลับไปหน้าหลัก</a>
         </div> 
 </body>
 </html>
