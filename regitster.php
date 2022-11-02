@@ -7,28 +7,97 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>register</title>
 </head>
+
 <body>
-    <h1><center>สมัครสมาชิก</center></h1>
-    <hr>
-    <table style="border: 2px solid black; width:30%" align="center">
-       <tr><td colspan="2" style="background-color: #6CD2FE;">กรอกข้อมูล</td></tr>
-       <tr><td>ชื่อบัญชี:</td><td><input type="text" name="=accountname" size="40"></td></tr>  
-       <tr><td>รหัสผ่าน:</td><td><input type="text" name="accountpwd" size="40"></td></tr>
-       <tr><td>ชื่อ-นามสกุล:</td><td><input type="text" name="name-surname" size="40"></td></tr>
-       <tr><td>เพศ:</td><td><input type="radio" name="gender" value="m">ชาย<br></td></tr>
-       <tr><td></td><td><input type="radio" name="gender" value="m">หญิง<br></td></tr>
-       <tr><td></td><td><input type="radio" name="gender" value="m">อื่นๆ<br></td></tr>
-       <tr><td>อีเมล:</td><td><input type="text" name="=accountname" size="40"></td></tr>
-       <tr><td colspan="2" align="center"><input type="submit" value="สมัครสมาชิก"></td></tr>
-    </table>  
-    <div align="center">
-       <a href="index.php">กลับไปหน้าหลัก</a>
-    </div>
+    <div class="container">
+        <h1 style="text-align:center">Webboard Chaiyaphat</h1>
+        <?php include "nav.php"; ?>
+        <br>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card text-dark  bg-white border-primary">
+                    <div class="card-header bg-primary text-white">กรอกข้อมูล</div>
+                    <div class="card-body">
+                        <form action="regiter_save.php" method="post">
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label">ชื่อบัญชี:</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="login" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label">รหัสผ่าน:</label>
+                                <div class="col-md-9">
+                                    <input type="password" name="pwd" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label">ชื่อ-นามสกุล:</label>
+                                <div class="col-md-9">
+                                    <input type="text" name="name" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label pt-0">เพศ:</label>
+                                <div class="col-md-9">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="gender" value="m" required>
+                                        <label class="form-check-lable">ชาย</label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="form-check">
+                                            <input type="radio" class="form-check-input" name="gender" value="f"
+                                                required>
+                                            <label class="form-check-lable">หญิง</label>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-check">
+                                                <input type="radio" class="form-check-input" name="gender" value="o"
+                                                    required>
+                                                <label class="form-check-lable">อื่นๆ</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label">อีเมล:</label>
+                                <div class="col-md-9">
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-md-3 col-form-label"></label>
+                                <div class="col-md-9">
+                                    <button class="btn btn-primary btn-sm" type="summit"><i class="bi bi-save2"></i>
+                                        สมัครสมาชิก</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 </body>
+
 </html>
