@@ -17,7 +17,7 @@ if(( $id % 2 ) == 0 ){
     <title>post</title>
 </head>
 <body>
-<h1 style="text-align: center;">Webboard KakKak</h1>
+<h1 style="text-align: center;">Webboard Chaiyaphat</h1>
 <div align="center">
          
 

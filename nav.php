@@ -1,7 +1,7 @@
 <?php
 if (!isset($_SESSION['id'])) {
 ?>
-    <nav class="navbar navbar-expand-lg bg-light" style="background-color:#D3D3D3;">
+    <nav class="navbar navbar-expand-lg " style="background-color:#D3D3D3;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php"><i class="bi bi-house-door-fill"></i>Home</a>
 

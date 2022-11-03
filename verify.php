@@ -9,33 +9,24 @@
 <?php 
 $user = $_POST["login"];
 $password = $_POST["pwd"];
+$conn=new PDO("mysql:host=localhost;dbname=web board;charset=utf8","root","");
+$sql="SELECT * FROM user where login='$user' and password=sha1('$password')";
+$result=$conn->query($sql);
+if($result->rowCount()==1){
+   $data=$result->fetch(PDO::FETCH_ASSOC);
+   $_SESSION['username']=$data['user'];
+   $_SESSION['role']=$data['role'];
+   $_SESSION['user_id']=$data['id'];
+   $_SESSION['id']=session_id();
+   header("location:index.php");
+   die();
+}else{
+   $_SESSION['error']='error';
+   header("location:login.php");
+   die();
+}
+$conn=null;
 ?>
-        <?php 
-     if($user == "admin"&& $password == "ad1234"){
-     
-        $_SESSION['username']='admin';
-        $_SESSION['role']='a';
-        $_SESSION['id']= session_id();
-        header("location:index.php");
-        die();  
-     }
-     elseif($user == "member"&& $password == "mem1234"){
-     
-        $_SESSION['username']='member';
-        $_SESSION['role']='m';
-        $_SESSION['id']= session_id();
-        header("location:index.php");
-        die();
-    }
-        else{
-           $_SESSION['error']='error';
-           header("location:index");
-           die();
-        }
-       ?>
-       <br>
-<a href="index.php">กลับไปหน้าหลัก</a>
-    </div>
 </body>
 
 </html>
